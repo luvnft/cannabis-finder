@@ -20,8 +20,20 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    // Enhanced type checking options
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "eslint.config.mjs" // Include ESLint config for type checking
+  ],
   "exclude": ["node_modules"]
 }
