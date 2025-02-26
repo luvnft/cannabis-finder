@@ -21,7 +21,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    // Enhanced type checking options
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitAny": true,
@@ -33,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "eslint.config.mjs" // Include ESLint config for type checking
+    "eslint.config.mjs"
   ],
   "exclude": ["node_modules"]
 }
