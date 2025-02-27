@@ -3,9 +3,9 @@ import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { ProductDetail } from '@/components/products/ProductDetail'
+import { fetchProductBySlug } from '@/api/products'
 
-import { fetchProductBySlug } from '@/lib/api/products'
+import { ProductDetail } from '@/components/products/ProductDetail'
 
 interface ProductPageProps {
   params: Promise<{

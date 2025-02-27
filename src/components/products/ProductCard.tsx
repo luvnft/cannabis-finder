@@ -2,11 +2,10 @@
 
 import Link from 'next/link'
 
+import { slugify } from '@/api/products'
 import { type Product } from '@/types/product'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-
-import { slugify } from '@/lib/api/products'
 
 interface ProductCardProps {
   product: Product

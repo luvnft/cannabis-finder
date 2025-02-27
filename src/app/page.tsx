@@ -1,12 +1,11 @@
 import { Suspense } from 'react'
 
+import { fetchProducts } from '@/api/products'
 import { queryClient } from '@/hooks/query'
 import { dehydrate } from '@tanstack/react-query'
 
-import { HomePage } from '@/components/HomePage'
+import { HomePage } from '@/components/pages/HomePage'
 import Providers from '@/components/providers/Providers'
-
-import { fetchProducts } from '@/lib/api/products'
 
 export default async function Home() {
   // Prefetch products on the server

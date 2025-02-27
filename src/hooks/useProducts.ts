@@ -2,10 +2,9 @@
 
 import { useEffect } from 'react'
 
+import { fetchProducts } from '@/api/products'
 import { useProductsStore } from '@/store/products'
 import { useQuery } from '@tanstack/react-query'
-
-import { fetchProducts } from '@/lib/api/products'
 
 export const useProducts = () => {
   const {
