@@ -1,12 +1,12 @@
-import { Suspense } from "react"
+import { Suspense } from 'react'
 
-import { queryClient } from "@/hooks/query"
-import { dehydrate } from "@tanstack/react-query"
+import { queryClient } from '@/hooks/query'
+import { dehydrate } from '@tanstack/react-query'
 
-import { HomePage } from "@/components/HomePage"
-import Providers from "@/components/providers/Providers"
+import { HomePage } from '@/components/HomePage'
+import Providers from '@/components/providers/Providers'
 
-import { fetchProducts } from "@/lib/api/products"
+import { fetchProducts } from '@/lib/api/products'
 
 export default async function Home() {
   // Prefetch products on the server
@@ -14,7 +14,7 @@ export default async function Home() {
 
   // Prefetch and cache the data with TanStack Query
   await queryClient.prefetchQuery({
-    queryKey: ["products"],
+    queryKey: ['products'],
     queryFn: () => Promise.resolve(productsData),
   })
 

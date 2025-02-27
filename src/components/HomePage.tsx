@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useProducts } from "@/hooks/useProducts"
+import { useProducts } from '@/hooks/useProducts'
 
-import { ProductCard } from "@/components/products/ProductCard"
+import { ProductCard } from '@/components/products/ProductCard'
 
 export function HomePage() {
   const { products, isLoading, error } = useProducts()
@@ -21,7 +21,7 @@ export function HomePage() {
 
   // Check if products is actually an array
   if (!Array.isArray(products)) {
-    console.error("Products is not an array:", products)
+    console.error('Products is not an array:', products)
     return (
       <div className="p-8 text-center text-red-500">
         Error: Products data is not in the expected format.
@@ -34,7 +34,7 @@ export function HomePage() {
       <h1 className="mb-8 text-3xl font-bold">Products ({products.length})</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {products.length > 0 ? (
-          products.map((product) => (
+          products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))
         ) : (

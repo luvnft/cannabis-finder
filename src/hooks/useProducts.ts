@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useEffect } from "react"
+import { useEffect } from 'react'
 
-import { useProductsStore } from "@/store/products"
-import { useQuery } from "@tanstack/react-query"
+import { useProductsStore } from '@/store/products'
+import { useQuery } from '@tanstack/react-query'
 
-import { fetchProducts } from "@/lib/api/products"
+import { fetchProducts } from '@/lib/api/products'
 
 export const useProducts = () => {
   const {
@@ -23,9 +23,9 @@ export const useProducts = () => {
     isLoading: queryLoading,
     error: queryError,
   } = useQuery({
-    queryKey: ["products"],
+    queryKey: ['products'],
     queryFn: () => fetchProducts(),
-    select: (data) => {
+    select: data => {
       return data
     },
   })
@@ -38,8 +38,8 @@ export const useProducts = () => {
       if (Array.isArray(productsArray)) {
         setProducts(productsArray)
       } else {
-        console.error("Products data is not an array:", data)
-        setError("Invalid data format received")
+        console.error('Products data is not an array:', data)
+        setError('Invalid data format received')
       }
     }
     setIsLoading(queryLoading)

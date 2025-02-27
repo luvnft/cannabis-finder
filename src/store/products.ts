@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { type Product } from "@/types/product"
-import { create } from "zustand"
+import { type Product } from '@/types/product'
+import { create } from 'zustand'
 
 interface ProductsState {
   products: Product[]
@@ -14,13 +14,13 @@ interface ProductsState {
   setError: (error: string | null) => void
 }
 
-export const useProductsStore = create<ProductsState>((set) => ({
+export const useProductsStore = create<ProductsState>(set => ({
   products: [],
-  setProducts: (products) => set({ products }),
+  setProducts: products => set({ products }),
   filteredProducts: [],
-  setFilteredProducts: (filteredProducts) => set({ filteredProducts }),
+  setFilteredProducts: filteredProducts => set({ filteredProducts }),
   isLoading: false,
-  setIsLoading: (isLoading) => set({ isLoading }),
+  setIsLoading: isLoading => set({ isLoading }),
   error: null,
-  setError: (error) => set({ error }),
+  setError: error => set({ error }),
 }))

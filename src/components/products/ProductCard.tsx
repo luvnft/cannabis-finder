@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import Link from "next/link"
+import Link from 'next/link'
 
-import { type Product } from "@/types/product"
+import { type Product } from '@/types/product'
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-import { slugify } from "@/lib/api/products"
+import { slugify } from '@/lib/api/products'
 
 interface ProductCardProps {
   product: Product

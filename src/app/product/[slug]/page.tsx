@@ -1,11 +1,11 @@
-import { Suspense } from "react"
+import { Suspense } from 'react'
 
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
-import { ProductDetail } from "@/components/products/ProductDetail"
+import { ProductDetail } from '@/components/products/ProductDetail'
 
-import { fetchProductBySlug } from "@/lib/api/products"
+import { fetchProductBySlug } from '@/lib/api/products'
 
 interface ProductPageProps {
   params: Promise<{
@@ -31,8 +31,8 @@ export async function generateMetadata({
     }
   } catch {
     return {
-      title: "Product Not Found",
-      description: "The requested product could not be found",
+      title: 'Product Not Found',
+      description: 'The requested product could not be found',
     }
   }
 }
@@ -44,7 +44,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
     // Check if the slug is valid
     if (!slug) {
-      console.error("Invalid slug parameter")
+      console.error('Invalid slug parameter')
       notFound()
       return null
     }
@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
     // Verify product data is valid
     if (!product.id) {
-      console.error("Retrieved product is invalid:", product)
+      console.error('Retrieved product is invalid:', product)
       notFound()
       return null
     }

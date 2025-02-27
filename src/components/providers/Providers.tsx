@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { type ReactNode } from "react"
+import { type ReactNode } from 'react'
 
-import HydrationProvider from "@/components/providers/HydrationProvider"
-import QueryProvider from "@/components/providers/QueryProvider"
+import HydrationProvider from '@/components/providers/HydrationProvider'
+import QueryProvider from '@/components/providers/QueryProvider'
 
 interface ProvidersProps {
   children: ReactNode

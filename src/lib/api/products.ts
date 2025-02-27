@@ -1,13 +1,13 @@
-import type { Product, ProductsResponse } from "@/types/product"
+import type { Product, ProductsResponse } from '@/types/product'
 
-const API_BASE_URL = "https://api.extensive.live"
+const API_BASE_URL = 'https://api.extensive.live'
 
 export async function fetchProducts(
   params?: URLSearchParams
 ): Promise<ProductsResponse> {
   const defaultParams = new URLSearchParams({
-    page: "1",
-    limit: "2000",
+    page: '1',
+    limit: '2000',
   })
 
   const finalParams = params
@@ -34,9 +34,9 @@ export async function fetchProductBySlug(slug: string): Promise<Product> {
   try {
     // Convert slug to product name (e.g., "blue-dream" to "Blue Dream")
     const productName = slug
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
 
     // Search for the product by name
     const response = await fetch(
@@ -75,7 +75,7 @@ export async function fetchProductBySlug(slug: string): Promise<Product> {
 
     return product
   } catch (error) {
-    console.error("Error fetching product:", error)
+    console.error('Error fetching product:', error)
     throw error
   }
 }
@@ -83,21 +83,21 @@ export async function fetchProductBySlug(slug: string): Promise<Product> {
 // Helper function to convert a product name to a URL-friendly slug
 export function slugify(text: string): string {
   const germanCharMap: { [key: string]: string } = {
-    ä: "ae",
-    ö: "oe",
-    ü: "ue",
-    ß: "ss",
-    Ä: "Ae",
-    Ö: "Oe",
-    Ü: "Ue",
+    ä: 'ae',
+    ö: 'oe',
+    ü: 'ue',
+    ß: 'ss',
+    Ä: 'Ae',
+    Ö: 'Oe',
+    Ü: 'Ue',
   }
 
   return text
     .toLowerCase()
-    .replace(/[äöüßÄÖÜ]/g, (match) => {
+    .replace(/[äöüßÄÖÜ]/g, match => {
       return germanCharMap[match] ?? match
     })
-    .replace(/[^a-zA-Z0-9-]/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "")
+    .replace(/[^a-zA-Z0-9-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
 }

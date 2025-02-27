@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { HydrationBoundary } from "@tanstack/react-query"
+import { HydrationBoundary } from '@tanstack/react-query'
 
 export default function HydrationProvider({
   state,

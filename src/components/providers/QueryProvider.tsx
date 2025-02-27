@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { type ReactNode } from "react"
+import { type ReactNode } from 'react'
 
-import { queryClient } from "@/hooks/query"
-import { QueryClientProvider } from "@tanstack/react-query"
+import { queryClient } from '@/hooks/query'
+import { QueryClientProvider } from '@tanstack/react-query'
 
 interface QueryProviderProps {
   children: ReactNode

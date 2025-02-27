@@ -1,24 +1,24 @@
-import { type Product } from "@/types/product"
+import { type Product } from '@/types/product'
 
-export type SortField = "productName" | "thc" | "cbd" | "priority" | "minPrice"
-export type SortOrder = "asc" | "desc"
+export type SortField = 'productName' | 'thc' | 'cbd' | 'priority' | 'minPrice'
+export type SortOrder = 'asc' | 'desc'
 
 export function sortProducts(
   products: Product[],
-  field: SortField = "priority",
-  order: SortOrder = "desc"
+  field: SortField = 'priority',
+  order: SortOrder = 'desc'
 ): Product[] {
   return [...products].sort((a, b) => {
     const valueA = a[field]
     const valueB = b[field]
 
-    if (typeof valueA === "string" && typeof valueB === "string") {
-      return order === "asc"
+    if (typeof valueA === 'string' && typeof valueB === 'string') {
+      return order === 'asc'
         ? valueA.localeCompare(valueB)
         : valueB.localeCompare(valueA)
     }
 
-    if (order === "asc") {
+    if (order === 'asc') {
       return (valueA as number) - (valueB as number)
     } else {
       return (valueB as number) - (valueA as number)
@@ -37,7 +37,7 @@ export function filterProducts(
     searchTerm: string
   }>
 ): Product[] {
-  return products.filter((product) => {
+  return products.filter(product => {
     // Filter by strain
     if (filters.strain && product.strain !== filters.strain) {
       return false

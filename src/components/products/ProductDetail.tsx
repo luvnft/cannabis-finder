@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { type Product } from "@/types/product"
-import { ArrowLeft } from "lucide-react"
+import { type Product } from '@/types/product'
+import { ArrowLeft } from 'lucide-react'
 
 import {
   Card,
@@ -12,7 +12,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from '@/components/ui/card'
 
 interface ProductDetailProps {
   product: Product
@@ -42,7 +42,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             <Image
               src={
                 `https://api.extensive.live${product.imgUrl}` ||
-                "/api/placeholder/400/400"
+                '/api/placeholder/400/400'
               }
               alt={product.productName}
               width={200}
@@ -87,7 +87,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             )}
 
             <div className="flex flex-wrap gap-2">
-              {product.effect?.map((effect) => (
+              {product.effect?.map(effect => (
                 <span
                   key={effect}
                   className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-xs"
@@ -99,7 +99,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
             <div className="mt-auto">
               <p className="text-lg font-bold">
-                Price:{" "}
+                Price:{' '}
                 {product.minPrice === product.maxPrice
                   ? `$${product.minPrice}`
                   : `$${product.minPrice} - $${product.maxPrice}`}
