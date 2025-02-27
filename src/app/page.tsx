@@ -4,7 +4,7 @@ import { fetchProducts } from '@/api/products'
 import { queryClient } from '@/hooks/query'
 import { dehydrate } from '@tanstack/react-query'
 
-import { HomePage } from '@/components/pages/HomePage'
+import { HomePage } from '@/components/_pages/HomePage'
 import Providers from '@/components/providers/Providers'
 
 export default async function Home() {

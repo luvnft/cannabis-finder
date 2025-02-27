@@ -30,7 +30,7 @@ export function HomePage() {
   }
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container">
       <h1 className="mb-8 text-3xl font-bold">Products ({products.length})</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {products.length > 0 ? (
