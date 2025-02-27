@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 
-import { slugify } from '@/api/products'
 import { type Product } from '@/types/product'
+import { slugify } from '@/utils/slugify'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 

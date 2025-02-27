@@ -1,6 +1,7 @@
 import type { Product, ProductsResponse } from '@/types/product'
+import { slugify } from '@/utils/slugify'
 
-const API_BASE_URL = 'https://api.extensive.live'
+import { API_BASE_URL } from './consts'
 
 export async function fetchProducts(
   params?: URLSearchParams
@@ -78,26 +79,4 @@ export async function fetchProductBySlug(slug: string): Promise<Product> {
     console.error('Error fetching product:', error)
     throw error
   }
-}
-
-// Helper function to convert a product name to a URL-friendly slug
-export function slugify(text: string): string {
-  const germanCharMap: { [key: string]: string } = {
-    ä: 'ae',
-    ö: 'oe',
-    ü: 'ue',
-    ß: 'ss',
-    Ä: 'Ae',
-    Ö: 'Oe',
-    Ü: 'Ue',
-  }
-
-  return text
-    .toLowerCase()
-    .replace(/[äöüßÄÖÜ]/g, match => {
-      return germanCharMap[match] ?? match
-    })
-    .replace(/[^a-zA-Z0-9-]/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
 }
