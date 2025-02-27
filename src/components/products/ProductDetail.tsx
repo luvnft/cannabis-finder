@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { API_BASE_URL } from '@/api/consts'
 import { type Product } from '@/types/product'
 import { ArrowLeft } from 'lucide-react'
 
@@ -40,10 +41,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
         <CardContent className="grid gap-6 p-6 sm:grid-cols-2">
           <div className="flex flex-col gap-4">
             <Image
-              src={
-                `https://api.extensive.live${product.imgUrl}` ||
-                '/api/placeholder/400/400'
-              }
+              src={`${API_BASE_URL}${product.imgUrl}`}
               alt={product.productName}
               width={200}
               height={200}
