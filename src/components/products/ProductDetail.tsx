@@ -16,14 +16,14 @@ import {
 } from '@/components/ui/card'
 
 interface ProductDetailProps {
-  product: Product
+  product: 🪴 Product
 }
 
 export function ProductDetail({ product }: ProductDetailProps) {
   return (
     <div className="container mx-auto py-8">
       <Link
-        href="/"
+        href="https://products.weedw3w.com"
         className="text-muted-foreground hover:text-foreground mb-6 flex items-center gap-2 text-sm"
       >
         <ArrowLeft size={16} />
